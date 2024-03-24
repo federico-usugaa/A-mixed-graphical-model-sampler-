@@ -12,7 +12,7 @@ $$
 
 where $(x_1,\ldots,x_{m-1},y)$ is a realization of the random vector $X=(X_1,\ldots,X_{m-1},X_m=Y)$ with $m-1$ categorical variables and one Gaussian variable $Y$; $G=(V, E)$ is a graph in which nodes $s\in V$ represent the variables of the dataset, and edges $E$ represent pairwise conditional associations between variables, while conditioning in the remaining variables. This exponential representation is obtained by maximizing Shannon entropy ([Wainwright, & Jordan, 2008](https://people.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf)).   
 
-The model parameters $\theta=(\alpha, \gamma, \gamma^{\prime})$ are obtained with the help of the R package mgm and are used as inputs in this project. It has been used a sample of $8405$ admitted to the University of Antioquia and $3$ variables for characterizing these Colombian high school graduates: "fami_educacionmadre_num", "cole_naturaleza_num" and "punt_global_num". Below the marginal distributions of these variables.
+The model parameters $\theta=(\alpha, \gamma, \gamma^{\prime})$ are obtained with the help of the R package mgm and are used as inputs in this project. It has been used a sample of $8405$ admitted applicants to the University of Antioquia and $3$ variables for characterizing these Colombian high school graduates: "fami_educacionmadre_num", "cole_naturaleza_num" and "punt_global_num". Below the marginal distributions of these variables.
 
 ![](Real_data_marginal_distributions.png)
 To generate random observations according to $p_{\theta}(x_1,\ldots, x_{m-1}, y)$ it has been used the Metropolis algorithm with a symmetric proposal distribution, i.e. with acceptance probability 
