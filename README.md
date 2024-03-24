@@ -18,7 +18,7 @@ The model parameters $\theta=(\alpha, \gamma, \gamma^{\prime})$ are obtained wit
 To generate random observations according to $p_{\theta}(x_1,\ldots, x_{m-1}, y)$ it has been used the Metropolis algorithm with a symmetric proposal distribution, i.e. with acceptance probability 
 
 $$
-A=\min \bigg( 1, \frac{p_{\theta}(x^{\ast}_1,\ldots, x^{\ast}_{m-1}, y^*)}{p_{\theta}(x_1,\ldots,x_{m-1}, y)} \bigg).
+A=\min \bigg( 1, \frac{p_{\theta}(x^{\ast}_1,\ldots, x^{\ast}_{m-1}, y^{\ast})}{p_{\theta}(x_1,\ldots,x_{m-1}, y)} \bigg).
 $$
 
 Below the marginal distributions of a sample of $10000$ colombian high school graduates randomly generated.
