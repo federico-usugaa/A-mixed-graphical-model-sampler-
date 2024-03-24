@@ -7,7 +7,7 @@ In this project, a random sampler of a mixed graphical model (mgm) is implemente
 The accepted mgm in this project is of the form
 
 $$
-p_{\theta}(x_1,\ldots, x_{m-1}, y) \propto \exp{\left\{ \sum_{s\in V}\alpha_s(x_s) + \sum_{(s,t)\in E}\alpha_{st}(x_s, x_t) + \sum_{s\in V}\gamma_s(x_s)y + \gamma^{\prime}_s(x_s)y^2  \right\} }
+p_{\theta}(x_1,\ldots, x_{m-1}, y) \propto \exp{\left\lbrace \sum_{s\in V}\alpha_s(x_s) + \sum_{(s,t)\in E}\alpha_{st}(x_s, x_t) + \sum_{s\in V}\gamma_s(x_s)y + \gamma^{\prime}_s(x_s)y^2  \right\rbrace }
 $$
 
 where $(x_1,\ldots,x_{m-1},y)$ is a realization of the random vector $X=(X_1,\ldots,X_{m-1},X_m=Y)$ with $m-1$ categorical variables and one Gaussian variable $Y$; $G=(V, E)$ is a graph in which nodes $s\in V$ represent the variables of the dataset, and edges $E$ represent pairwise conditional associations between variables, while conditioning in the remaining variables. This exponential representation is obtained by maximizing Shannon entropy ([Wainwright, & Jordan, 2008](https://people.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf)).   
