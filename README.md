@@ -15,6 +15,7 @@ where $(x_1,\ldots,x_{m-1},y)$ is a realization of the random vector $X=(X_1,\ld
 The model parameters $\theta=(\alpha, \gamma, \gamma^{\prime})$ are obtained with the help of the R package mgm and are used as inputs in this project. It has been used a sample of $8405$ admitted applicants to the University of Antioquia and $3$ variables for characterizing these Colombian high school graduates: "fami_educacionmadre_num", "cole_naturaleza_num" and "punt_global_num". Below the marginal distributions of these variables.
 
 ![](Real_data_marginal_distributions.png)
+
 To generate random observations according to $p_{\theta}(x_1,\ldots, x_{m-1}, y)$ it has been used the Metropolis algorithm with a symmetric proposal distribution, i.e. with acceptance probability 
 
 $$
@@ -24,6 +25,7 @@ $$
 Below the marginal distributions of a sample of $10000$ colombian high school graduates randomly generated.
 
 ![](Marginal_distributions_10000_observations.png)
+
 ## Purpose
 
 The mgm sampler will be used as a tool in model validation. Root mean square error (RMSE) has been used to compare the values of histograms bins generated from the mgm sampler and the corresponding values from the real data. Below the distributions of RMSE associated with each random variable after having generated $100$ samples. In our example, the model exhibits an acceptable performance. Despite the model seems to behave well with respect to the categorical variables, the error in the Gaussian variable is too big.
