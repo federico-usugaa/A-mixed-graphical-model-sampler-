@@ -1,6 +1,6 @@
 # A mixed graphical model sampler
 
-In this project, a random sampler of a mixed graphical model (mgm) is implemented through the Metropolis algorithm. In particular, it supports a mgm with $m-1$ categorical variables and $1$ Gaussian variable. To train the model, the R library mgm ([Haslbeck, & Waldorp, 2020](https://arxiv.org/abs/1510.06871)) was used, a sample of $8405$ admitted to the University of Antioquia and $3$ variables for characterizing these Colombian high school graduates. This sampler is used to validate this type of mgm's.
+In this project, a random sampler of a mixed graphical model (mgm) is implemented through the Metropolis algorithm. In particular, it supports a mgm with $m-1$ categorical variables and $1$ Gaussian variable. To train the model, the R library mgm ([Haslbeck, & Waldorp, 2020](https://arxiv.org/abs/1510.06871)) was used, a sample of $8405$ admitted applicants to the University of Antioquia and $3$ variables for characterizing these Colombian high school graduates. This sampler is used to validate this type of mgm's.
 
 ## Overview
 
