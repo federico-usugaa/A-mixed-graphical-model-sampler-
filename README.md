@@ -4,10 +4,10 @@ In this project, a random sampler of a mixed graphical model (mgm) is implemente
 
 ## Overview
 
-The accepted mgm is of the form
+The accepted mgm in this project is of the form
 
 $$
-p_{\theta}(x_1,\ldots, x_{m-1}, y) \propto \exp{\left\{\sum_{s\in V}\alpha_s(x_s) + \sum_{(s,t)\in E}\alpha_{st}(x_s, x_t) + \sum_{s\in V}\gamma_s(x_s)y + \gamma^{\prime}_s(x_s)y^2  \right\} },
+p_{\theta}(x_1,\ldots, x_{m-1}, y) \propto \exp{\left\{ \sum_{s\in V}\alpha_s(x_s) + \sum_{(s,t)\in E}\alpha_{st}(x_s, x_t) + \sum_{s\in V}\gamma_s(x_s)y + \gamma^{\prime}_s(x_s)y^2  \right\} }
 $$
 
 where $(x_1,\ldots,x_{m-1},y)$ is a realization of the random vector $X=(X_1,\ldots,X_{m-1},X_m=Y)$ with $m-1$ categorical variables and one Gaussian variable $Y$; $G=(V, E)$ is a graph in which nodes $s\in V$ represent the variables of the dataset, and edges $E$ represent pairwise conditional associations between variables, while conditioning in the remaining variables. This exponential representation is obtained by maximizing Shannon entropy ([Wainwright, & Jordan, 2008](https://people.eecs.berkeley.edu/~wainwrig/Papers/WaiJor08_FTML.pdf)).   
@@ -18,14 +18,15 @@ The model parameters $\theta=(\alpha, \gamma, \gamma^{\prime})$ are obtained wit
 To generate random observations according to $p_{\theta}(x_1,\ldots, x_{m-1}, y)$ it has been used the Metropolis algorithm with a symmetric proposal distribution, i.e. with acceptance probability 
 
 $$
-A=\min{\left(1, \frac{p_{\theta}(x^*_1,\ldots, x^*_{m-1}, y^*)}{p_{\theta}(x_1,\ldots,x_{m-1}, y)}\right)}.
+A=\min \left( 1, \frac{p_{\theta}(x^*_1,\ldots, x^*_{m-1}, y^*)}{p_{\theta}(x_1,\ldots,x_{m-1}, y)} \right).
 $$
+
 Below the marginal distributions of a sample of $10000$ colombian high school graduates randomly generated.
 
 ![](Marginal_distributions_10000_observations.png)
 ## Purpose
 
-The mgm sampler will be used as a tool in model validation. Root mean square error (RMSE) has been used to compare the values of histograms bins generated from the mgm sampler and the corresponding values from the real data. Below the distributions of RMSE associated with each random variable after having generated $100$ samples. In our example, the model exhibits an acceptable performance. Despite the model seems to behave well with respect to categorical variables, the error in the Gaussian variable is too big.
+The mgm sampler will be used as a tool in model validation. Root mean square error (RMSE) has been used to compare the values of histograms bins generated from the mgm sampler and the corresponding values from the real data. Below the distributions of RMSE associated with each random variable after having generated $100$ samples. In our example, the model exhibits an acceptable performance. Despite the model seems to behave well with respect to the categorical variables, the error in the Gaussian variable is too big.
 
 ![](Distributions_of_RMSE_for_100_samples.png)
 
